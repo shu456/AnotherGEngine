@@ -120,6 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Resources;$(SolutionDir)SampleResources;$(SolutionDir)Components;$(SolutionDir)Objects;$(SolutionDir)Sources;$(SolutionDir)Custom;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,6 +136,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Resources;$(SolutionDir)SampleResources;$(SolutionDir)Components;$(SolutionDir)Objects;$(SolutionDir)Sources;$(SolutionDir)Custom;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,20 +147,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Components\RenderComponent.cpp" />
+    <ClCompile Include="Custom\TestGameObject.cpp" />
     <ClCompile Include="E:\Git\glad\src\glad.c" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="RenderComponent.cpp" />
-    <ClCompile Include="Resource.cpp" />
-    <ClCompile Include="SampleResource.cpp" />
-    <ClCompile Include="Shaders.cpp" />
+    <ClCompile Include="Objects\GameObject.cpp" />
+    <ClCompile Include="Resources\Resource.cpp" />
+    <ClCompile Include="Resources\Shaders.cpp" />
+    <ClCompile Include="SampleResources\SampleResource.cpp" />
+    <ClCompile Include="Sources\GameEngine.cpp" />
+    <ClCompile Include="Sources\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseComponent.h" />
-    <ClInclude Include="GLObject.hpp" />
-    <ClInclude Include="RenderComponent.h" />
-    <ClInclude Include="Resource.hpp" />
-    <ClInclude Include="SampleResource.hpp" />
-    <ClInclude Include="Shaders.hpp" />
+    <ClInclude Include="Components.hpp" />
+    <ClInclude Include="Components\BaseComponent.h" />
+    <ClInclude Include="Components\Components.hpp" />
+    <ClInclude Include="Components\RenderComponent.h" />
+    <ClInclude Include="Custom\TestGameObject.hpp" />
+    <ClInclude Include="Objects\GameObject.h" />
+    <ClInclude Include="Objects\GLObject.hpp" />
+    <ClInclude Include="Resources\Resource.hpp" />
+    <ClInclude Include="Resources\Shaders.hpp" />
+    <ClInclude Include="SampleResources\SampleResource.hpp" />
+    <ClInclude Include="Sources\GameEngine.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

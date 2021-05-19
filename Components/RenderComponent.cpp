@@ -1,11 +1,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "RenderComponent.h"
+#include <RenderComponent.h>
 
-#include "SampleResource.hpp"
+#include <SampleResource.hpp>
 
-#include "Shaders.hpp"
+#include <Shaders.hpp>
 
 void RenderComponent::OnStart()
 {

@@ -23,45 +23,75 @@
       <UniqueIdentifier>{7ad2d2f2-ccfc-4e4c-98d4-a70ed9d5847e}</UniqueIdentifier>
       <Extensions>*Component*</Extensions>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{20d7ec3b-09af-4067-a31e-a594b7a5b1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sample">
+      <UniqueIdentifier>{d5450d6c-519d-40cc-92ef-4ced359f7e85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="E:\Git\glad\src\glad.c">
       <Filter>glad</Filter>
     </ClCompile>
-    <ClCompile Include="Resource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shaders.cpp">
+    <ClCompile Include="Resources\Resource.cpp">
       <Filter>Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="RenderComponent.cpp">
+    <ClCompile Include="Resources\Shaders.cpp">
+      <Filter>Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\GameObject.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleResources\SampleResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\RenderComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
-    <ClCompile Include="SampleResource.cpp">
+    <ClCompile Include="Sources\main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Custom\TestGameObject.cpp">
+      <Filter>Source Files\Sample</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Resource.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Components.hpp">
+      <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="Shaders.hpp">
+    <ClInclude Include="Components\BaseComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components.hpp">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\RenderComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\Shaders.hpp">
       <Filter>Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="BaseComponent.h">
-      <Filter>Component</Filter>
+    <ClInclude Include="Resources\Resource.hpp">
+      <Filter>Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="RenderComponent.h">
-      <Filter>Component</Filter>
+    <ClInclude Include="Objects\GLObject.hpp">
+      <Filter>Object</Filter>
     </ClInclude>
-    <ClInclude Include="SampleResource.hpp">
+    <ClInclude Include="Objects\GameObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameEngine.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleResources\SampleResource.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GLObject.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Custom\TestGameObject.hpp">
+      <Filter>Source Files\Sample</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

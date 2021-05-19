@@ -1,9 +1,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "Shaders.hpp"
+#include <Shaders.hpp>
 
-#include "GLObject.hpp"
+#include <GLObject.hpp>
 
 Shader::Shader(const char * c8Data, unsigned u32ShaderType) :
   Resource(reinterpret_cast<unsigned char*>( const_cast<char*>( c8Data) )),

@@ -1,4 +1,4 @@
-#include "SampleResource.hpp"
+#include <SampleResource.hpp>
 
 float Triangles[9] =
 {

@@ -1,7 +1,7 @@
 #ifndef SHADERS_HPP
 #define SHADERS_HPP
 
-#include "Resource.hpp"
+#include <Resource.hpp>
 
 class GLObjectHandlerInterface;
 

@@ -1,8 +1,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "SampleResource.hpp"
-#include "RenderComponent.h"
+#include <GameEngine.hpp>
+#include <GameObject.h>
+
+#include <TestGameObject.hpp>
 
 GLFWwindow* window;
 
@@ -46,8 +48,13 @@ int main()
     return -1;
   }
 
-  RenderComponent rc;
-  rc.OnStart();
+  GameEngine GE;
+
+  TestObject go;
+  go.OnStart();
+
+  //initializing all the Components
+  GE.OnStart();
   while (!glfwWindowShouldClose(window))
   {
     processInput(window);
@@ -55,14 +62,15 @@ int main()
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    rc.OnUpdate();
+    //update loop
+    GE.OnUpdate();
 
     //input first
     glfwPollEvents();
     //flip the buffer
     glfwSwapBuffers(window);
   }
-  rc.OnDestroy();
+  GE.OnDestroy();
   //clean up everything
   glfwTerminate();
   return 0;

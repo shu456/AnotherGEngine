@@ -23,6 +23,7 @@ public:
 private:
   unsigned m_u32VBO;
   unsigned m_u32VAO;
+  unsigned m_u32EBO;
   ShaderProgram* m_pShaderProg;
 };
 

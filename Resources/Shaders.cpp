@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -54,6 +56,15 @@ void ShaderProgram::Setup()
     glAttachShader(m_pglObj->GetID(), pShader->GetID());
   }
   glLinkProgram(m_pglObj->GetID());
+
+  int success = 1; // will be 0 if linking error.
+  // check for linking errors
+  glGetProgramiv(m_pglObj->GetID(), GL_LINK_STATUS, &success);
+  if (!success) {
+    char infoLog[512];
+    glGetProgramInfoLog(m_pglObj->GetID(), 512, NULL, infoLog);
+    std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+  }
 }
 
 void ShaderProgram::Use() const

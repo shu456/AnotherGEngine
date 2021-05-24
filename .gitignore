@@ -28,3 +28,10 @@
 /x64/Debug/GraphicEngine.exe.recipe
 /x64/Debug/GraphicEngine.log
 /x64/Debug/GraphicEngine.vcxproj.FileListAbsolute.txt
+*.obj
+*.exe
+*.ilk
+*.pdb
+*tlog
+*.lastbuildstate
+*.idb

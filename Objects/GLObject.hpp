@@ -11,8 +11,8 @@ public:
     m_u32ID(u32ID)
   {}
   virtual ~GLObjectHandlerInterface() {}
-  virtual unsigned Setup(unsigned) = 0;
-  virtual unsigned Setup() = 0;
+  virtual void Setup(unsigned) = 0;
+  virtual void Setup() = 0;
   virtual void Destroy() = 0;
   unsigned GetID() const
   {
@@ -33,15 +33,14 @@ public:
 
   }
 
-  unsigned Setup(unsigned arg) final
+  void Setup(unsigned arg) final
   {
     this->m_bCreated = true;
-    return this->m_cF(arg);
+    this->m_u32ID = this->m_cF(arg);
   }
 
-  unsigned Setup() final
+  void Setup() final
   {
-    return -1;
   }
 protected:
   using Base = GLObjectHandler<0xffffffff, CreateFunc, DeleteFunc>;
@@ -88,15 +87,14 @@ public:
 
   }
 
-  unsigned Setup(unsigned arg) final
+  void Setup(unsigned arg) final
   {
-    return -1;
   }
 
-  unsigned Setup() final
+  void Setup() final
   {
     this->m_bCreated = true;
-    return this->m_cF();
+    this->m_u32ID = this->m_cF();
   }
 protected:
   using Base = GLObjectHandler<0xffffffff, CreateFunc, DeleteFunc>;

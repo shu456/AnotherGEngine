@@ -7,5 +7,6 @@ Resource::Resource(unsigned char* u8Data)
 
 Resource::~Resource()
 {
-  delete m_u8Data;
+  //not now
+  //delete m_u8Data;
 }

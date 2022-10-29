@@ -1,28 +1,34 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <RenderComponent.h>
+#include <RenderComponent.hpp>
 
 #include <SampleResource.hpp>
 
 #include <Shaders.hpp>
 
+Components< RenderComponent > g_cRenderEngine;
+
 #define USE_VBO 0
 //#define DEBUG
 
-void RenderComponent::OnStart()
+void RenderComponent::SetupShader(std::filesystem::path const& vertFile, std::filesystem::path const& fragFile)
 {
   /** Create 2 shaders out from sample*/
-  Shader* vert = new Shader(vertexShaderSource, GL_VERTEX_SHADER);
-  Shader* frag = new Shader(fragmentShaderSource, GL_FRAGMENT_SHADER);
+  Shader* vert = new Shader(vertFile, GL_VERTEX_SHADER);
+  Shader* frag = new Shader(fragFile, GL_FRAGMENT_SHADER);
 
   /** Setup shaders*/
   vert->Setup();
   frag->Setup();
 
   m_pShaderProg = new ShaderProgram(vert, frag);
-  m_pShaderProg->Setup();
 
+  m_pShaderProg->Setup();
+}
+
+void RenderComponent::OnStart()
+{
   glGenVertexArrays(1, &m_u32VAO);
   glGenBuffers(1, &m_u32VBO);
 

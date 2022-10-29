@@ -7,8 +7,8 @@
 
 #include <GLObject.hpp>
 
-Shader::Shader(const char * c8Data, unsigned u32ShaderType) :
-  Resource(reinterpret_cast<unsigned char*>( const_cast<char*>( c8Data) )),
+Shader::Shader(std::filesystem::path const& path, unsigned u32ShaderType) :
+  FileResource(path),
   m_u32ShaderType(u32ShaderType),
   m_pglObj(CreateGLObject<1>(glCreateShader, glDeleteShader))
 {
@@ -22,8 +22,8 @@ Shader::~Shader()
 void Shader::Setup()
 {
   m_pglObj->Setup(m_u32ShaderType);
-  const char* c8Data = reinterpret_cast<const char*>( m_u8Data );
-  glShaderSource(GetID(), 1, &c8Data, NULL);
+  char const* _data{ getData().data() };
+  glShaderSource(GetID(), 1, &_data, NULL);
   glCompileShader(GetID());
 }
 

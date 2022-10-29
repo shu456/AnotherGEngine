@@ -1,7 +1,7 @@
 #ifndef SHADERS_HPP
 #define SHADERS_HPP
 
-#include <Resource.hpp>
+#include <FileResource.hpp>
 
 class GLObjectHandlerInterface;
 
@@ -11,10 +11,10 @@ enum ShaderType
   Frag = GL_FRAGMENT_SHADER
 };
 
-class Shader : public Resource
+class Shader : public FileResource
 {
 public:
-  Shader(const char * c8Data,unsigned u32ShaderType);
+  Shader(std::filesystem::path const& path,unsigned u32ShaderType);
   ~Shader();
   void Setup();
   void Destroy();
@@ -38,5 +38,3 @@ private:
 };
 
 #endif
-
-

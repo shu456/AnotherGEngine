@@ -1,10 +1,13 @@
 #include <iostream>
+#include <RenderComponent.hpp>
 
-#include "TestGameObject.hpp"
+#include <TestGameObject.hpp>
 
 void TestObject::OnStart()
 {
   RenderComponent* rc = AddNewComponent<RenderComponent>();
+
+  rc->SetupShader("vert.vert", "frag.frag");
 
   RenderComponent* rc1 = GetComponent< RenderComponent >();
 

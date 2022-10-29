@@ -1,5 +1,7 @@
 #include <GameEngine.hpp>
 
+#include <RenderComponent.hpp>
+
 GameEngine* g_pGE = nullptr;
 
 GameEngine::GameEngine()
@@ -9,15 +11,15 @@ GameEngine::GameEngine()
 
 void GameEngine::OnStart()
 {
-  m_cRenderEngine.OnStart();
+  g_cRenderEngine.OnStart();
 }
 
 void GameEngine::OnUpdate()
 {
-  m_cRenderEngine.OnUpdate();
+  g_cRenderEngine.OnUpdate();
 }
 
 void GameEngine::OnDestroy()
 {
-  m_cRenderEngine.OnDestroy();
+  g_cRenderEngine.OnDestroy();
 }

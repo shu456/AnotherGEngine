@@ -7,10 +7,9 @@
 class Resource
 {
 public:
-  Resource(unsigned char* u8Data = nullptr);
+  Resource();
   virtual ~Resource();
 protected:
-  unsigned char* m_u8Data;
 };
 
 #endif

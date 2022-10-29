@@ -38,7 +38,7 @@ public:
   void OnDestroy()
   {
     for (auto& pComp : m_vComponents)
-      pComp.second->OnUpdate();
+      pComp.second->OnDestroy();
   }
 
   ~Components()

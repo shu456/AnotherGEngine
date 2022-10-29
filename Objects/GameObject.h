@@ -3,9 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <GameEngine.hpp>
-#include <BaseComponent.h>
-#include <RenderComponent.h>
 
 class GameObject
 {
@@ -30,13 +27,13 @@ protected:
   template<typename T>
   T* GetComponent()
   {
-    return g_pGE->GetComponent<T>(m_u32ID);
+    return ::GetComponent<T>(m_u32ID);
   }
 
   template<typename T>
   T* AddNewComponent()
   {
-    return g_pGE->AddNewComponent<T>(m_u32ID);
+    return ::AddNewComponent<T>(m_u32ID);
   }
 private:
   unsigned m_u32ID;

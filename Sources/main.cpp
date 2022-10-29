@@ -6,11 +6,9 @@
 
 #include <TestGameObject.hpp>
 
-GLFWwindow* window;
-
 void processInput(GLFWwindow* window)
 {
-  int keyPressed = glfwGetKey(window, GLFW_KEY_ESCAPE);
+  int keyPressed{ glfwGetKey(window, GLFW_KEY_ESCAPE) };
   if (keyPressed == GLFW_PRESS)
     glfwSetWindowShouldClose(window, true);
 }
@@ -20,10 +18,10 @@ void framebuffer_size_callback(GLFWwindow* , int width, int height)
   glViewport(0, 0, width, height);
 }
 
-int CreateWindow(const char* sWindowName)
+int CreateWindow(GLFWwindow* &window,const char* sWindowName)
 {
   window = glfwCreateWindow(800, 600, sWindowName, NULL, NULL);
-  if (window == NULL)
+  if (nullptr == window)
   {
     glfwTerminate();
     return -1;
@@ -35,12 +33,13 @@ int CreateWindow(const char* sWindowName)
 
 int main()
 {
+  GLFWwindow* window{ nullptr };
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 
-  CreateWindow("LearnOpenGL");
+  CreateWindow(window,"LearnOpenGL");
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))

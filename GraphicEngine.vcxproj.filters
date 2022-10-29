@@ -16,9 +16,6 @@
     <Filter Include="glad">
       <UniqueIdentifier>{c3791b4c-2768-42d5-ad25-692c4ac53486}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders">
-      <UniqueIdentifier>{3e7ad8a9-1354-4e42-bbba-9846d1bee1e9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component">
       <UniqueIdentifier>{7ad2d2f2-ccfc-4e4c-98d4-a70ed9d5847e}</UniqueIdentifier>
       <Extensions>*Component*</Extensions>
@@ -29,16 +26,16 @@
     <Filter Include="Source Files\Sample">
       <UniqueIdentifier>{d5450d6c-519d-40cc-92ef-4ced359f7e85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{73b7161d-e65d-43e1-abc8-e29dbe50f8e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Shaders">
+      <UniqueIdentifier>{3e7ad8a9-1354-4e42-bbba-9846d1bee1e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="E:\Git\glad\src\glad.c">
-      <Filter>glad</Filter>
-    </ClCompile>
-    <ClCompile Include="Resources\Resource.cpp">
-      <Filter>Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="Resources\Shaders.cpp">
-      <Filter>Shaders</Filter>
+      <Filter>Resource\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="Objects\GameObject.cpp">
       <Filter>Object</Filter>
@@ -58,25 +55,28 @@
     <ClCompile Include="Custom\TestGameObject.cpp">
       <Filter>Source Files\Sample</Filter>
     </ClCompile>
+    <ClCompile Include="glad\src\glad.c">
+      <Filter>glad</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources\Resource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources\FileResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Components.hpp">
-      <Filter>Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Components\BaseComponent.h">
+    <ClInclude Include="Components\BaseComponent.hpp">
       <Filter>Component</Filter>
     </ClInclude>
     <ClInclude Include="Components\Components.hpp">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="Components\RenderComponent.h">
+    <ClInclude Include="Components\RenderComponent.hpp">
       <Filter>Component</Filter>
     </ClInclude>
     <ClInclude Include="Resources\Shaders.hpp">
-      <Filter>Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="Resources\Resource.hpp">
-      <Filter>Shaders</Filter>
+      <Filter>Resource\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="Objects\GLObject.hpp">
       <Filter>Object</Filter>
@@ -93,5 +93,19 @@
     <ClInclude Include="Custom\TestGameObject.hpp">
       <Filter>Source Files\Sample</Filter>
     </ClInclude>
+    <ClInclude Include="Resources\Resource.hpp">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\FileResource.hpp">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SampleResources\vert.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SampleResources\frag.frag">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
